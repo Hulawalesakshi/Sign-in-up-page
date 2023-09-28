@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="" class="logo"><h3>Sakshi Hulawale</h3></a>
+            <ul class="nav-links">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <button class="btn signin-button">Sign In</button>
+            <button class="menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+    <header>
+        
+        <div class="container">
+            <div class="Form-Wrapper">
+               <span class="form-closer"><i class="fa-solid fa-xmark"></i></span>
+                
+                <div class="form-box sign-in-box form-active">
+                    <h2>Sign In</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span><i class="fa-solid fa-message"></i></span>
+                            <input type="email" required>
+                            <label for="">Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span><i class="fa-solid fa-lock"></i></span>
+                            <input type="password" required>
+                            <label for="">Password</label>
+                        </div>
+                        <div class="remember-forget">
+                            <label for="">
+                                <input type="checkbox">Remember This.
+                                <a href="">Forgot Password?</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn">Sign in</button>
+                        <div class="signin-register">
+                            <p>Don't have an account?</p>
+                            <a class="signup-link">Sign up</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!--signup-->
+
+                <div class="form-box sign-up-box">
+                    <h2>Sign Up</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span><i class="fa-solid fa-user"></i></span>
+                            <input type="type" required>
+                            <label for="">User Name</label>
+                        </div>
+                        <div class="input-box">
+                            <span><i class="fa-solid fa-message"></i></span>
+                            <input type="email" required>
+                            <label for="">Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span><i class="fa-solid fa-lock"></i></span>
+                            <input type="password" required>
+                            <label for="">Password</label>
+                        </div>
+                        <div class="remember-forget">
+                            <label for="">
+                                <input type="checkbox">Accept the  
+                                <a href="">Terms and Conditions</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn">Sign up</button>
+                        <div class="signin-register">
+                            <p>Already have an account?</p>
+                            <a class="signin-link">Sign in</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <script>
+        let SignUpLink = document.querySelector('.signup-link');
+        let SignInLink = document.querySelector('.signin-link');
+        let SignUpBox = document.querySelector('.sign-up-box');
+        let SignInBox = document.querySelector('.sign-in-box');
+
+        SignUpLink.addEventListener('click',()=>{
+            SignUpBox.classList.add('form-active');
+            SignInBox.classList.remove('form-active');
+        })
+
+        SignInLink.addEventListener('click',()=>{
+            SignUpBox.classList.remove('form-active');
+            SignInBox.classList.add('form-active');
+        });
+
+        let SigninButton = document.querySelector('.signin-button');
+        let FormWrapper = document.querySelector('.Form-Wrapper');
+        let FormCloser = document.querySelector('.form-closer');
+
+        SigninButton.addEventListener('click',()=>{
+            FormWrapper.style.transform ='scale(1) translate(-50%, -50%)'
+        });
+        FormCloser.addEventListener('click', ()=>{
+            FormWrapper.style.transform ='scale(0) translate(-50%, -50%)'
+        })
+
+
+        let MenuButton = document.querySelector('.menu');
+        let NavLinks = document.querySelector('.nav-links');
+
+        MenuButton.addEventListener('click',()=>{
+            NavLinks.classList.toggle('nav-links-active');
+        })
+    </script>
+
+</body>
+</html>
